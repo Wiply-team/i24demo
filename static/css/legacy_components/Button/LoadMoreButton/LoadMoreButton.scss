@@ -1,0 +1,11 @@
+@import './../../../sass/variables';
+@import './../../../sass/mixins';
+
+span.load-more {
+  padding: 0;
+  color: $color-deep-blue;
+  text-align: left;
+  text-decoration: underline;
+  font-weight: $font-weight-l;
+  font-size: $font-s;
+}

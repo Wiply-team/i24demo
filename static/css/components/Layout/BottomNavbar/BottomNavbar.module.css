@@ -1,0 +1,124 @@
+@value layout: "../../../styles/variables/layout.module.css";
+@value stack-level-high, gap-s, breakpoint-l, breakpoint-s from layout;
+@value colors: "../../../styles/variables/colors.module.css";
+@value color-white, color-red400, color-blue400, shadow-large from colors;
+@value fonts: "../../../styles/variables/fonts.module.css";
+@value font-size-xxxs from fonts;
+
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  z-index: stack-level-high;
+  width: 100%;
+  background-color: color-white;
+  box-shadow: shadow-large;
+}
+
+@media (width > breakpoint-l) {
+  .wrapper {
+    display: none;
+  }
+}
+
+.close-advert-button {
+  position: absolute;
+  top: 0;
+}
+
+:global(.ltr) .close-advert-button {
+  right: 0;
+}
+
+:global(.rtl) .close-advert-button {
+  left: 0;
+}
+
+.nav {
+  all: revert;
+}
+
+.list {
+  all: revert;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+}
+
+.list-item {
+  all: revert;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 20%;
+  padding: gap-s;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .list-item {
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+  }
+}
+
+.list-item.active {
+  color: color-red400;
+  fill: color-red400;
+}
+
+.list-item:hover {
+  color: color-white;
+  fill: color-white;
+  background-color: color-blue400;
+}
+
+.link-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: gap-s;
+  align-items: center;
+  justify-content: center;
+  font-size: font-size-xxxs;
+  text-transform: uppercase;
+}
+
+@media (width <= breakpoint-s) and (prefers-reduced-motion: no-preference) {
+  .link-wrapper.wiggle > * {
+    transform-origin: 50% 50%;
+    animation: wiggle linear 400ms;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(9deg);
+  }
+
+  40% {
+    transform: rotate(-6deg);
+  }
+
+  60% {
+    transform: rotate(3deg);
+  }
+
+  80% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.link-wrapper span {
+  text-align: center;
+}

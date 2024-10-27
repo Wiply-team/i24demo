@@ -1,0 +1,16 @@
+@import './../../../../sass/variables';
+@import './../../../../sass/mixins';
+
+[data-is="thread"] {
+  margin-left: $comment-shift;
+
+  .reply-form {
+    margin-bottom: $mp-xl;
+  }
+}
+
+// arabic layout specificities
+.rtl [data-is="thread"] {
+  margin-right: $comment-shift;
+  margin-left: 0;
+}

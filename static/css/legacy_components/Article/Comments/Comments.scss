@@ -1,0 +1,6 @@
+@import '../../../sass/variables';
+
+section[data-is="article-comments"] {
+  position: relative;
+  margin: $mp-xxl 0;
+}

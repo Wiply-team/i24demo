@@ -1,0 +1,62 @@
+[data-is="image-cover"] {
+  margin: 0;
+}
+[data-is="image-cover"] picture {
+  background-color: #f6f6f6;
+  display: block;
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+  width: 100%;
+}
+[data-is="image-cover"] picture img {
+  align-self: center;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+[data-is="image-cover"] figcaption {
+  color: #4b4b4b;
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+[data-is="image-cover"] figcaption:before {
+  content: "";
+  display: block;
+  float: left;
+  height: 0;
+  margin-left: -1px;
+  padding-top: 18px;
+  position: relative;
+  width: 1px;
+}
+@media (max-width: 600px) {
+  [data-is="image-cover"] figcaption:before {
+    padding-top: 54px;
+  }
+}
+[data-is="image-cover"] figcaption:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+[data-is="image-cover"] figcaption span.credit {
+  font-style: normal;
+}
+[data-is="image-cover"] figcaption span.credit:before {
+  content: "■";
+  margin: 0 0.6rem;
+}
+div.lazyImageContainer img[data-is="lazy-image"] {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  z-index: 0;
+}
+div.lazyImageContainer img[data-is="lazy-image"].visible {
+  opacity: 1;
+}
+/*# sourceMappingURL=5722.e2c33f35.chunk.css.map*/

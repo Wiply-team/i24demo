@@ -1,0 +1,45 @@
+@import '../../../sass/variables';
+
+[data-is="author"] {
+  display: flex;
+  flex-direction: column;
+  gap: $mp-l;
+  margin: $mp-xxl 0;
+  color: $color-grey-dark;
+  font-size: $font-xs;
+
+  .wrapper {
+    display: flex;
+    gap: $mp-l;
+    align-items: center;
+
+    .image-wrapper, .reading-time-wrapper {
+      flex: 0 0 auto;
+    }
+
+    .information-wrapper {
+      flex: 1 1 auto;
+      line-height: 24px;
+    }
+
+    .information-with-image-wrapper {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+@media (max-width: $size-md) {
+  [data-is="author"] {
+    gap: $mp-l;
+
+    .common-information-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: $mp-sm;
+
+      .article-author-separator {
+        display: none;
+      }
+    }
+  }
+}

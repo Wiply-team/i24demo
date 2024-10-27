@@ -1,0 +1,115 @@
+@value layout: "../../../../styles/variables/layout.module.css";
+@value breakpoint-l, breakpoint-xl, stack-level-low, page-width-m, header-main-height, gap-s, gap-m, gap-l from layout;
+@value colors: "../../../../styles/variables/colors.module.css";
+@value color-blue400, color-white, color-grey100, shadow-large from colors;
+
+.wrapper {
+  position: fixed;
+  top: -200px;
+  right: 0;
+  left: 0;
+  color: color-blue400;
+  background-color: color-white;
+  box-shadow: shadow-large;
+  z-index: stack-level-low;
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wrapper {
+    transition: top 200ms ease-in-out, visibility 400ms ease-in-out;
+  }
+}
+
+@media (width <= breakpoint-xl) {
+  .wrapper {
+    top: -500px;
+    padding: 0 gap-m;
+  }
+}
+
+@media (width <= breakpoint-l) {
+  .wrapper {
+    top: -100vh;
+    height: calc(100vh - header-main-height);
+    overflow: auto;
+    padding: 0 gap-m;
+  }
+}
+
+.wrapper.open {
+  top: header-main-height;
+  visibility: visible;
+}
+
+.navigation {
+  all: revert;
+
+  display: flex;
+  gap: gap-l;
+  padding: gap-s 0;
+  width: 100%;
+  max-width: page-width-m;
+  margin: auto;
+  justify-content: space-between;
+}
+
+@media (width <= breakpoint-xl) {
+  .navigation {
+    gap: gap-m;
+    flex-direction: column;
+    padding: gap-m 0;
+  }
+}
+
+.categories-wrapper,
+.pages-wrapper,
+.social-networks-wrapper {
+  padding: gap-m 0;
+}
+
+@media (width <= breakpoint-l) {
+  .categories-wrapper,
+  .pages-wrapper,
+  .social-networks-wrapper {
+    padding: gap-m 0;
+  }
+}
+
+.categories-wrapper,
+.categories-divider-wrapper {
+  display: none;
+}
+
+@media (width <= breakpoint-xl) {
+  .categories-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: gap-m;
+  }
+
+  .categories-divider-wrapper {
+    display: block;
+  }
+}
+
+.divider {
+  flex: 0 0 auto;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-image: initial;
+  border-right: 1px solid color-grey100;
+  height: auto;
+}
+
+@media (width <= breakpoint-xl) {
+  .divider {
+    flex: 1 0 auto;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    border-top: 1px solid color-grey100;
+    height: 0;
+  }
+}

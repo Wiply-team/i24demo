@@ -1,0 +1,37 @@
+@import '../../../sass/variables_new';
+
+.widget-layout-media-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+  background-color: $color-grey50;
+
+  @media (max-width: $breaking-point-mobile-tablet) {
+    padding-top: calc(3 / 4 * 100%);
+  }
+
+  @media (min-width: $breaking-point-mobile-tablet) {
+    padding-top: calc(10 / 16 * 100%);
+  }
+
+  &.squared {
+    @media (max-width: $breaking-point-mobile-tablet) {
+      padding-top: calc(3 / 4 * 100%);
+    }
+
+    @media (min-width: $breaking-point-mobile-tablet) {
+      padding-top: calc(9 / 10 * 100%);
+    }
+  }
+
+  img, video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

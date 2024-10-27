@@ -1,0 +1,65 @@
+@value colors: "../../../styles/variables/colors.module.css";
+@value color-white, color-grey500 from colors;
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper.size-default {
+  height: 4rem;
+}
+
+.wrapper.size-small {
+  height: 1rem;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: block;
+  padding: 0;
+  background: 0 0;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-radius: 50%;
+  opacity: 1;
+  animation: loading 500ms infinite linear;
+  content: "";
+}
+
+.wrapper.colored-default .loader::after {
+  border-color: color-grey500;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+.wrapper.colored-white .loader::after {
+  border-color: color-white;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+.wrapper.size-default .loader::after {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-top: -0.8rem;
+  margin-left: -0.8rem;
+}
+
+.wrapper.size-small .loader::after {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: -0.4rem;
+  margin-left: -0.4rem;
+}

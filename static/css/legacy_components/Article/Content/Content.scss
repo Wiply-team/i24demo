@@ -1,0 +1,25 @@
+@import '../../../sass/variables';
+
+.cover-and-content {
+  .aside-ads {
+    display: flex;
+    flex-direction: column;
+    gap: $mp-l;
+  }
+
+  .ads {
+    margin-top: $mp-xl;
+    margin-bottom: $mp-xl;
+  }
+
+  article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .components {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

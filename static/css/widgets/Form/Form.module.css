@@ -1,0 +1,8 @@
+@value layout: "../../styles/variables/layout.module.css";
+@value gap-m from layout;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: gap-m;
+}

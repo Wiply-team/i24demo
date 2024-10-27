@@ -1,0 +1,59 @@
+@value colors: "../../../../styles/variables/colors.module.css";
+@value color-blue400, color-red400, color-grey500 from colors;
+@value layout: "../../../../styles/variables/layout.module.css";
+@value gap-l from layout;
+@value fonts: "../../../../styles/variables/fonts.module.css";
+@value font-size-xxs, font-size-xs, font-size-m, font-weight-semibold from fonts;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: gap-l;
+  color: color-grey500;
+}
+
+.subtitle {
+  all: revert;
+  margin: 0;
+
+  font-weight: font-weight-semibold;
+  font-size: font-size-m;
+  text-align: center;
+  color: color-blue400;
+}
+
+.sign-up-button {
+  color: color-red400;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+.text {
+  all: revert;
+  margin: 0;
+
+  font-size: font-size-xs;
+  text-align: center;
+}
+
+.link-wrapper {
+  font-weight: font-weight-semibold;
+  color: color-blue400;
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .link-wrapper {
+    transition: color 200ms ease-in-out;
+  }
+}
+
+.link-wrapper:hover {
+  color: color-red400;
+}
+
+.mandatory-text {
+  color: color-red400;
+  font-size: font-size-xxs;
+  margin: 0;
+}

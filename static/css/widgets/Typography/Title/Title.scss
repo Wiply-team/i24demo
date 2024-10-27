@@ -1,0 +1,41 @@
+@import '../../../sass/variables_new';
+
+.widget-typography-title {
+  // stylelint-disable-next-line value-no-vendor-prefix
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-m;
+  color: $color-blue;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  @media (max-width: $breaking-point-mobile-tablet) {
+    font-size: $font-size-s;
+  }
+
+  &.size-small {
+    font-size: $font-size-s;
+
+    @media (max-width: $breaking-point-mobile-tablet) {
+      font-size: $font-size-xs;
+    }
+  }
+
+  &.size-large {
+    font-size: $font-size-l;
+
+    @media (max-width: $breaking-point-mobile-tablet) {
+      font-size: $font-size-m;
+    }
+  }
+
+  &.size-extra-large {
+    font-size: $font-size-xl;
+
+    @media (max-width: $breaking-point-mobile-tablet) {
+      font-size: $font-size-l;
+    }
+  }
+}

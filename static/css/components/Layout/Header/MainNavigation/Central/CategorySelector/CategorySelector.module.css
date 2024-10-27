@@ -1,0 +1,54 @@
+@value colors: "../../../../../../styles/variables/colors.module.css";
+@value color-red400, color-yellow400, color-white, color-grey300 from colors;
+@value fonts: "../../../../../../styles/variables/fonts.module.css";
+@value font-weight-bold from fonts;
+@value layout: "../../../../../../styles/variables/layout.module.css";
+@value gap-xs from layout;
+
+.wrapper {
+  color: color-grey300;
+  fill: color-grey300;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wrapper {
+    transition: color 200ms ease-in-out, fill 200ms ease-in-out;
+  }
+}
+
+.wrapper:hover {
+  color: color-white;
+  fill: color-white;
+}
+
+.wrapper.active {
+  color: color-white;
+  fill: color-white;
+}
+
+.wrapper.active .toggle-wrapper::after {
+  position: absolute;
+  background-color: color-red400;
+  content: "";
+  display: block;
+  height: 2px;
+  margin: gap-xs 0 0;
+  width: 30px;
+}
+
+.toggle-wrapper > a:focus-visible {
+  border: none;
+  outline-offset: 2px;
+  outline: 3px dashed color-white;
+}
+
+.highlighted-category {
+  color: color-yellow400;
+  fill: color-yellow400;
+}
+
+.highlighted-category:hover {
+  color: color-white;
+  fill: color-white;
+}

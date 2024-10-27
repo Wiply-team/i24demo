@@ -1,0 +1,92 @@
+@value layout: "../../../../styles/variables/layout.module.css";
+@value breakpoint-s, breakpoint-l, gap-l, stack-level-normal, stack-level-high from layout;
+@value fonts: "../../../../styles/variables/fonts.module.css";
+@value font-size-s from fonts;
+@value colors: "../../../../styles/variables/colors.module.css";
+@value overlay-background, color-white from colors;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: stack-level-normal;
+}
+
+.skip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: font-size-s;
+  color: color-white;
+  background-color: overlay-background;
+  z-index: stack-level-high;
+  padding: gap-l 0;
+}
+
+.skip:focus-within {
+  opacity: 1;
+  bottom: 0;
+}
+
+.skip-target {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.all {
+  display: flex;
+}
+
+.desktop {
+  display: none;
+}
+
+@media (width > breakpoint-s) {
+  .desktop {
+    display: flex;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+@media (width <= breakpoint-s) {
+  .mobile {
+    display: flex;
+  }
+}
+
+.advert {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.wrapper.start .advert {
+  justify-content: flex-start;
+}
+
+.wrapper.center .advert {
+  justify-content: center;
+}
+
+.wrapper.end-start .advert,
+.wrapper.end .advert {
+  justify-content: flex-end;
+}
+
+@media (width < breakpoint-l) {
+  .wrapper.end-start .advert {
+    justify-content: flex-start;
+  }
+}

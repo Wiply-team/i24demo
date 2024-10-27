@@ -1,0 +1,12 @@
+@value colors: "../../../styles/variables/colors.module.css";
+@value color-red400 from colors;
+@value fonts: "../../../styles/variables/fonts.module.css";
+@value font-size-xxs from fonts;
+
+.message {
+  all: revert;
+  margin: 0;
+
+  color: color-red400;
+  font-size: font-size-xxs;
+}

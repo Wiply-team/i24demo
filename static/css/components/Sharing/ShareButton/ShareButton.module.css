@@ -1,0 +1,108 @@
+@value layout: "../../../styles/variables/layout.module.css";
+@value stack-level-high, gap-s, gap-m, gap-l from layout;
+@value colors: "../../../styles/variables/colors.module.css";
+@value color-white, shadow-normal, color-grey500, color-red400 from colors;
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: gap-m;
+}
+
+.toggle {
+  fill: color-grey500;
+}
+
+.open .toggle {
+  fill: color-red400;
+}
+
+.menu {
+  position: absolute;
+  bottom: gap-l;
+  padding: gap-s;
+  background-color: color-white;
+  border-radius: 999em;
+  box-shadow: shadow-normal;
+  z-index: stack-level-high;
+}
+
+:global(.ltr) .menu {
+  right: -9px;
+}
+
+:global(.rtl) .menu {
+  left: -9px;
+}
+
+.list {
+  all: revert;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: row;
+  gap: gap-m;
+}
+
+.list > li {
+  all: revert;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.button-wrapper {
+  fill: color-grey500;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button-wrapper {
+    transition: color 200ms ease-in-out;
+  }
+}
+
+.button-wrapper:hover {
+  fill: color-red400;
+}
+
+.triangle-with-shadow {
+  position: absolute;
+  top: 39px;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 4px -16px rgb(0, 0, 0, 0.25);
+  transform: rotate(180deg);
+}
+
+:global(.ltr) .triangle-with-shadow {
+  right: 16px;
+}
+
+:global(.rtl) .triangle-with-shadow {
+  left: 16px;
+}
+
+.triangle-with-shadow::after {
+  position: absolute;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  background: color-white;
+  box-shadow: 0 0 4px 0 rgb(0, 0, 0, 0.25);
+  transform: rotate(45deg);
+  content: "";
+}
+
+:global(.ltr) .triangle-with-shadow::after {
+  left: 1px;
+}
+
+:global(.rtl) .triangle-with-shadow::after {
+  right: 1px;
+}

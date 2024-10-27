@@ -1,0 +1,20 @@
+@value colors: "../../../../../../styles/variables/colors.module.css";
+@value color-white from colors;
+@value layout: "../../../../../../styles/variables/layout.module.css";
+@value gap-l, gap-m, breakpoint-xl from layout;
+
+.logo {
+  display: flex;
+  fill: color-white;
+  padding: 0 gap-l;
+}
+
+@media (width <= breakpoint-xl) {
+  :global(.ltr) .logo {
+    padding: 0 gap-m 0 0;
+  }
+
+  :global(.rtl) .logo {
+    padding: 0 0 0 gap-m;
+  }
+}

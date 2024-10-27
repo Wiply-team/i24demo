@@ -1,0 +1,12 @@
+@import '../../../sass/variables_new';
+
+.homepage-section-header {
+  display: flex;
+  justify-content: space-between;
+
+  &.placeholder {
+    // title height = font-size * line-height + margin-bottom
+    height: calc((1.4rem * 1.2) + (1.4rem * 1.4));
+    background-color: $color-grey50;
+  }
+}

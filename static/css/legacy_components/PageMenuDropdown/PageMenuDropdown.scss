@@ -1,0 +1,151 @@
+@import './../../sass/variables';
+
+.page-menu-dropdown {
+  position: fixed;
+  top: $main-header-height;
+  z-index: $zindex-1;
+  width: 100%;
+  height: $page-menu-height;
+  overflow: hidden;
+  color: $color-grey-light;
+  background-color: rgba(0,0,0,0.8);
+  box-shadow: $default-shadow;
+
+  > .wrapper {
+    background-color: $color-white;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    list-style: none;
+    justify-content: center;
+
+    &.not-expanded {
+      height: $page-menu-height;
+      overflow: hidden;
+    }
+
+    li {
+      position: relative;
+      margin: 0;
+      margin-right: $mp-l;
+      font-weight: $font-weight-l;
+      font-size: $font-xs;
+      line-height: $page-menu-height;
+      text-transform: uppercase;
+      transition: color $animation-duration-default ease-out;
+
+      &.active {
+        color: $color-deep-blue;
+      }
+
+      &:hover {
+        color: $color-red;
+      }
+
+      &.toggler {
+        cursor: pointer;
+
+        .toggler-button {
+          display: none;
+
+          @media (max-width: $size-xl) {
+            position: absolute;
+            //vertically center icon with 15px height in the li with $page-menu-height
+            top: calc(#{$page-menu-height} / 2 - 24px / 2);
+            right: 0;
+            display: block;
+            transform: rotate(-90deg);
+            transition:
+              transform $animation-duration-default ease-out,
+              fill $animation-duration-default ease-out;
+            will-change: transform;
+            fill: $color-deep-blue;
+          }
+        }
+
+        &:hover .toggler-button {
+          fill: $color-red;
+        }
+      }
+    }
+  }
+
+  &.is-expanded {
+    height: 100vh;
+
+    ul li.toggler .toggler-button {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+// arabic layout specificities
+.rtl {
+  .page-menu-dropdown {
+    ul {
+      li {
+        margin-right: 0;
+        margin-left: $mp-l;
+
+        &.toggler {
+          .toggler-button {
+            right: unset;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $size-xl) {
+  .page-menu-dropdown {
+    top: calc(#{$main-header-height} + #{$secondary-header-height});
+    transition:
+      height $animation-duration-default ease-out,
+      top $animation-duration-default ease-out;
+    will-change:
+      height,
+      top;
+
+    &.collapsed {
+      top: $main-header-height;
+      height: $page-collapsed-menu-height;
+    }
+
+    ul {
+      flex-direction: column;
+      justify-content: start;
+
+      li {
+        margin-right: 0;
+        text-align: left;
+
+        &::before {
+          margin-right: 0;
+          content: '';
+        }
+      }
+    }
+  }
+
+  .rtl {
+    .page-menu-dropdown {
+      ul {
+        li {
+          margin-left: 0;
+          text-align: right;
+
+          &:nth-child(1)::before,
+          &:nth-child(2)::before {
+            margin-left: 0;
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}

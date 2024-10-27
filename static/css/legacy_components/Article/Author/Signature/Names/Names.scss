@@ -1,0 +1,14 @@
+@import '../../../../../sass/variables';
+
+.signature-names {
+  font-weight: bold;
+  color: $color-deep-blue;
+
+  .signature-link {
+    transition: color $animation-duration-default ease-out;
+
+    &:hover {
+      color: $color-red;
+    }
+  }
+}

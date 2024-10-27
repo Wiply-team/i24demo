@@ -1,0 +1,91 @@
+@import '../../sass/variables_new';
+
+.brightcove-lazy-player {
+  position: relative;
+  display: block;
+  // important flag is mandatory because brightcove override it by passing the video in fullscreen
+  width: 100% !important;
+  height: 0 !important;
+  margin-bottom: $gap-m;
+  padding-top: calc(9 / 16 * 100%);
+  background-color: $color-grey50;
+
+  .video-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .poster-live {
+    background-color: $color-red;
+    color: white;
+    position: absolute;
+    top: 32px;
+    left: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    height: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: $font-size-xl;
+  }
+
+  @media (max-width: $breaking-point-mobile-tablet) {
+    .poster-live {
+      top: 16px;
+      left: -5px;
+      min-width: 120px;
+      height: 32px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: $font-size-l;
+    }
+  }
+
+  @media (min-width: $breaking-point-tablet-desktop) {
+    .poster-live {
+      &.large {
+        min-width: 240px;
+        height: 64px;
+        font-size: $font-size-xxxl;
+      }
+    }
+  }
+
+  .play-button-wrapper {
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+  }
+
+  video,
+  .video-js {
+    > .vjs-big-play-button {
+      display: none !important;
+    }
+  }
+}
+
+.brightcove-lazy-player.placeholder {
+  .video-poster {
+    background-color: $color-grey50;
+  }
+}
+
+// arabic layout specificities
+.rtl {
+  .brightcove-lazy-player{
+    .poster-live {
+      left: auto;
+      right: -5px;
+    }
+  }
+}

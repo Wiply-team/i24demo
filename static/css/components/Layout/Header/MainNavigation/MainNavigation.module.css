@@ -1,0 +1,33 @@
+@value layout: "../../../../styles/variables/layout.module.css";
+@value stack-level-higher, breakpoint-xl, gap-m, page-width-m, header-main-height from layout;
+@value colors: "../../../../styles/variables/colors.module.css";
+@value color-blue400, color-white, shadow-large from colors;
+@value fonts: "../../../../styles/variables/fonts.module.css";
+@value font-size-xxs from fonts;
+
+.wrapper {
+  width: 100%;
+  color: color-white;
+  background-color: color-blue400;
+  box-shadow: shadow-large;
+  font-size: font-size-xxs;
+  z-index: stack-level-higher;
+}
+
+.navigation {
+  all: revert;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: header-main-height;
+}
+
+@media (width <= breakpoint-xl) {
+  .navigation {
+    box-shadow: none;
+    max-width: page-width-m;
+    margin: auto;
+    padding: 0 gap-m;
+  }
+}

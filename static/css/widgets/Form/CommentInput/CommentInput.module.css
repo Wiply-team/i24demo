@@ -1,0 +1,84 @@
+@value layout: "../../../styles/variables/layout.module.css";
+@value gap-s, gap-m from layout;
+@value colors: "../../../styles/variables/colors.module.css";
+@value shadow-normal, color-grey500, color-blue200, color-blue400, color-red400 from colors;
+
+.wrapper {
+  padding: gap-m;
+  box-shadow: shadow-normal;
+  fill: color-blue400;
+}
+
+.placeholder {
+  all: revert;
+  padding: 0;
+  font: inherit;
+  line-height: normal;
+  border: none;
+  background: none;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  display: flex;
+  gap: gap-s;
+  width: 100%;
+  align-items: center;
+}
+
+.placeholder:focus-visible {
+  outline-offset: 2px;
+  outline: 3px solid color-blue200;
+}
+
+.placeholder-text {
+  flex: 1 1 auto;
+  text-align: start;
+  color: color-grey500;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .placeholder-text {
+    transition: color 200ms ease-in-out;
+  }
+}
+
+.wrapper:hover .placeholder-text {
+  color: color-blue400;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: gap-s;
+  width: 100%;
+  align-items: center;
+}
+
+.input,
+.input:required {
+  all: revert;
+  box-sizing: border-box;
+  border: none;
+
+  flex: 1 1 auto;
+}
+
+.submit-button {
+  all: revert;
+  padding: 0;
+  font: inherit;
+  line-height: normal;
+  border: none;
+  background: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .submit-button {
+    fill: color 200ms ease-in-out;
+  }
+}
+
+.submit-button:hover {
+  fill: color-red400;
+}

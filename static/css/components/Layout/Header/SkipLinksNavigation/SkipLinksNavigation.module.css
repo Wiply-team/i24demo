@@ -1,0 +1,41 @@
+@value layout: "../../../../styles/variables/layout.module.css";
+@value gap-m, stack-level-higher, page-width-m from layout;
+@value colors: "../../../../styles/variables/colors.module.css";
+@value color-blue300, color-blue400, color-red400, color-white from colors;
+
+.wrapper {
+  padding: 0 gap-m;
+  position: absolute;
+  transform: translateY(-100%);
+}
+
+.wrapper:focus-within {
+  background-color: color-white;
+  position: relative;
+  transform: translateY(0);
+}
+
+.list {
+  all: revert;
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: gap-m;
+  padding: gap-m 0;
+  width: page-width-m;
+  z-index: stack-level-higher;
+  margin: auto;
+}
+
+.list > li {
+  all: revert;
+  margin: 0;
+  padding: 0;
+
+  color: color-blue400;
+}
+
+.list > li:hover {
+  color: color-red400;
+}

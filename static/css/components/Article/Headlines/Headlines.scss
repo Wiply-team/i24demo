@@ -1,0 +1,42 @@
+@import './../../../sass/variables_new';
+
+.headlines {
+  --gap: 16px;
+
+  @media (min-width: $breaking-point-mobile-tablet) {
+    .headline-articles {
+      display: flex;
+      flex-flow: row wrap;
+      gap: var(--gap);
+
+      .headline-article-hero {
+        flex-basis: 0;
+        flex-grow: 1;
+
+        .information-wrapper {
+          padding: $gap-m;
+        }
+      }
+
+      .headline-side-articles {
+        display: flex;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        .headline-side-article {
+          flex-basis: calc(50% - var(--gap) / 2);
+          flex-grow: 1;
+
+          // Compress the gap between the two rows of side articles
+          &:nth-child(-n+2) {
+            .widget-layout-divider {
+              margin-bottom: $gap-s;
+            }
+          }
+        }
+      }
+    }
+  }
+}

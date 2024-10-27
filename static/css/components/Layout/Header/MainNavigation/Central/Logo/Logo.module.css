@@ -1,0 +1,7 @@
+@value colors: "../../../../../../styles/variables/colors.module.css";
+@value color-white from colors;
+
+.logo {
+  display: flex;
+  fill: color-white;
+}

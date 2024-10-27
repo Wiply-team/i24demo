@@ -1,0 +1,28 @@
+@import './../../sass/variables_new';
+
+.missing-persons-list {
+  .missing-persons {
+    ul {
+      all: revert;
+      padding: 0;
+      display: flex;
+      flex-flow: row wrap;
+      margin: 0;
+      list-style-type: none;
+      gap: $gap-m;
+
+      li {
+        all: revert;
+        flex-basis: calc(25% - (#{$gap-m} * 3 / 4));
+
+        @media (max-width: $breaking-point-tablet-desktop) {
+          flex-basis: calc(100% / 3 - (#{$gap-m} * 2 / 3));
+        }
+
+        @media (max-width: $breaking-point-mobile-tablet) {
+          flex-basis: calc(50% - (#{$gap-m} * 1 / 2));
+        }
+      }
+    }
+  }
+}

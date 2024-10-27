@@ -1,0 +1,27 @@
+@value colors: "../../../../../styles/variables/colors.module.css";
+@value color-grey500, color-red400 from colors;
+@value layout: "../../../../../styles/variables/layout.module.css";
+@value animation-duration-default, breakpoint-m from layout;
+
+.signature-links .social-link {
+  fill: color-grey500;
+  display: inline-block;
+  vertical-align: middle;
+  transition: fill animation-duration-default ease-out,
+    color animation-duration-default ease-out;
+}
+
+.signature-links .social-link:hover {
+  fill: color-red400;
+  color: color-red400;
+}
+
+@media (width <= breakpoint-m) {
+  .signature-separator {
+    display: none;
+  }
+
+  .signature-links {
+    display: block;
+  }
+}

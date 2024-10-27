@@ -1,0 +1,15 @@
+@import './../../../../sass/variables';
+
+.component-article-list {
+  .ads {
+    @media (max-width: $size-sm) {
+      min-height: 250px;
+    }
+  }
+
+  .widget-wrapper {
+    @media (max-width: $size-xl) {
+      min-height: 430px;
+    }
+  }
+}

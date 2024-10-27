@@ -1,0 +1,36 @@
+@import '../../../../sass/variables_new';
+
+.article-list-horizontal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  .article-list-horizontal-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: $gap-s;
+
+    .cover-wrapper {
+      align-self: center;
+    }
+  }
+
+  &>a:focus-visible {
+    .article-reading-time-wrapper {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: $breaking-point-mobile-tablet) {
+    .article-list-horizontal-wrapper {
+      .cover-wrapper {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 50%;
+      }
+    }
+  }
+}

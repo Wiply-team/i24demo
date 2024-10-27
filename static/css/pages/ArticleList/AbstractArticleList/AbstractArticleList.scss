@@ -1,0 +1,37 @@
+@import '../../../sass/variables';
+
+#category {
+  @media (min-width: $size-sm) {
+    .breadcrumb {
+      margin-bottom: 0;
+    }
+  }
+
+  .ads-aside {
+    min-height: 800px;
+
+    @media (max-width: $size-sm) {
+      min-height: 250px;
+    }
+  }
+
+  .adapex-wrapper {
+    min-height: 250px;
+    margin: $mp-xxl 0;
+    padding: 0;
+
+    @media (max-width: $size-sm) {
+      min-height: 0;
+      margin: 0;
+    }
+  }
+
+  .widget-wrapper {
+    margin: $mp-xxl 0;
+  }
+
+  .last-revision-date {
+    color: $color-grey-dark;
+    margin-bottom: $mp-xl;
+  }
+}

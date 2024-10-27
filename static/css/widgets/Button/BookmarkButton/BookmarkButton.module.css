@@ -1,0 +1,6 @@
+@value colors: "../../../styles/variables/colors.module.css";
+@value color-red400 from colors;
+
+.active {
+  fill: color-red400;
+}

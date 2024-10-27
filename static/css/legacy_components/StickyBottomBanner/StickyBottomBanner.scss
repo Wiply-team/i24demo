@@ -1,0 +1,44 @@
+@import './../../sass/variables';
+
+.sticky-bottom {
+  position: fixed;
+  bottom: 0;
+  z-index: $zindex-1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  direction: ltr;
+  pointer-events: none;
+
+  .sticky-bottom-content {
+    padding-bottom: $mp-l;
+    margin-left: auto;
+
+    .video-wrapper-pip {
+      pointer-events: all;
+      position: relative;
+      bottom: 0;
+
+      .video-js {
+        width: 360px;
+        height: 207px;
+      }
+    }
+
+    .loader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 360px;
+      height: 207px;
+    }
+  }
+
+  @media (max-width: $size-lg) {
+    bottom: 65px;
+  }
+
+  @media (max-width: $size-md) {
+    bottom: 53px;
+  }
+}

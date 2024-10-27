@@ -1,0 +1,68 @@
+@import '../../sass/variables';
+
+$icon-margin: 25px;
+
+div[data-is='banner'] {
+  .container-page {
+    position: relative;
+    padding: $mp-l;
+    color: $color-white;
+    background-color: $color-red;
+
+    .close-button {
+      position: absolute;
+      top: 9px;
+      right: 9px;
+      padding: 0;
+      fill: $color-white;
+      stroke: $color-white;
+    }
+
+    p.content {
+      margin: 0 $icon-margin 0 0;
+
+      .banner-icon {
+        fill: $color-white;
+        display: inline-block;
+        vertical-align: text-bottom;
+      }
+
+      .title {
+        margin-left: $mp-m;
+      }
+
+      .see-more-separator {
+        font-size: $font-s;
+        font-weight: bold;
+        font-style: italic;
+      }
+
+      .see-more {
+        font-size: $font-s;
+        font-weight: bold;
+        font-style: italic;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.rtl div[data-is='banner'] {
+  .container-page {
+    .close-button {
+      right: unset;
+      left: 9px;
+    }
+
+    p.content {
+      margin: 0 0 0 $icon-margin;
+
+      .title {
+        margin: 0 $mp-m 0 0;
+      }
+    }
+  }
+}

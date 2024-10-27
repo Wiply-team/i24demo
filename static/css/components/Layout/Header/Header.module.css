@@ -1,0 +1,17 @@
+@value layout: "../../../styles/variables/layout.module.css";
+@value stack-level-higher from layout;
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: stack-level-higher;
+  isolation: isolate;
+
+  a:focus-visible,
+  button:focus-visible {
+    border: none;
+    outline: 3px dashed color-white;
+  }
+}

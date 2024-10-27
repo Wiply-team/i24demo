@@ -1,0 +1,23 @@
+@import './../../sass/variables';
+
+.sticky-ads {
+  margin: 0 auto;
+
+  // @WONTFIX sticky is unsupported on I.E. so ads will just scroll along the screen
+  .ads-main-container {
+    position: sticky;
+    top: $header-padding;
+    display: flex;
+    flex-direction: column;
+    gap: $mp-l;
+  }
+}
+
+@media (min-width: $size-sm) {
+  .ads-main-container {
+    .taboola-wrapper {
+      max-width: 300px;
+      margin: auto;
+    }
+  }
+}

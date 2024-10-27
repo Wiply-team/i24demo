@@ -1,0 +1,8 @@
+@import '../../../../sass/variables';
+@import '../../../../sass/mixins';
+
+[data-is="comment-form"] {
+  position: relative;
+  width: 100%;
+  margin-bottom: $mp-xxl;
+}

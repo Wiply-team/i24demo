@@ -1,0 +1,17 @@
+:global(#root) {
+  isolation: isolate;
+  z-index: 0;
+}
+
+:global(#sidebar) {
+  isolation: isolate;
+  z-index: 1;
+}
+
+:global(.ltr) {
+  direction: ltr;
+}
+
+:global(.rtl) {
+  direction: rtl;
+}

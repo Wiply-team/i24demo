@@ -1,0 +1,18 @@
+@value layout: "../../../styles/variables/layout.module.css";
+@value breakpoint-s from layout;
+
+.wrapper {
+  width: 350px;
+}
+
+@media (width > breakpoint-s) {
+  .wrapper {
+    min-height: 612px;
+  }
+}
+
+@media (width <= breakpoint-s) {
+  .wrapper {
+    width: 100%;
+  }
+}

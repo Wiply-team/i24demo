@@ -1,0 +1,83 @@
+@value layout: "../../../../styles/variables/layout.module.css";
+@value gap-m, header-main-height, header-secondary-height, breakpoint-xl from layout;
+@value colors: "../../../../styles/variables/colors.module.css";
+@value color-blue400, color-red400 from colors;
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: -60px;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  width: fit-content;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wrapper {
+    transition: opacity 200ms ease-out;
+  }
+}
+
+:global(.ltr) .wrapper {
+  left: -60px;
+}
+
+:global(.rtl) .wrapper {
+  right: -60px;
+}
+
+@media (width <= breakpoint-xl) {
+  :global(.ltr) .wrapper {
+    left: -40px;
+  }
+
+  :global(.rtl) .wrapper {
+    right: -40px;
+  }
+}
+
+.wrapper.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.list {
+  all: revert;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  position: sticky;
+  top: calc(header-main-height + header-secondary-height + gap-m);
+  display: flex;
+  flex-direction: column;
+  gap: gap-m;
+  align-items: center;
+  flex-grow: 0;
+}
+
+.list > li {
+  all: revert;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.button-wrapper {
+  fill: color-blue400;
+  align-items: center;
+  display: flex;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button-wrapper {
+    transition: color 200ms ease-in-out;
+  }
+}
+
+.button-wrapper:hover {
+  fill: color-red400;
+}

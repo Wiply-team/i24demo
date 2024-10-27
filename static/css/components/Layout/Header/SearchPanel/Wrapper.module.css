@@ -1,0 +1,38 @@
+@value colors: "../../../../styles/variables/colors.module.css";
+@value color-blue400, color-white from colors;
+@value layout: "../../../../styles/variables/layout.module.css";
+@value header-main-height, stack-level-low from layout;
+
+.wrapper {
+  position: fixed;
+  top: -100vh;
+  right: 0;
+  left: 0;
+  height: calc(100vh - header-main-height);
+  overflow-y: scroll;
+  color: color-blue400;
+  background-color: color-white;
+  z-index: stack-level-low;
+}
+
+.wrapper::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+  background: transparent;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  height: 0;
+  width: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wrapper {
+    will-change: top;
+    transition: top 400ms ease-in-out;
+  }
+}
+
+.open {
+  top: header-main-height;
+}

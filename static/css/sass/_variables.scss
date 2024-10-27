@@ -1,0 +1,92 @@
+@import 'spectre.css/src/variables';
+
+// colors
+$color-black: #1c222e;
+$color-dark: #454d5d;
+$color-lighter: #9399a1;
+$color-video-black: #141820;
+$color-deep-black: #000000;
+$color-deep-blue: #07244b;
+$color-deep-blue-lighter: #516681;
+$color-light-blue: #009de7;
+$color-grey: #f6f6f6;
+$color-border: #e8edf4;
+$color-border-darker: #d5d9de;
+$color-grey-extra-light: #e8edf4;
+$color-grey-light: #72767E;
+$color-grey-dark: #4b4b4b;
+$color-red: #e11e1d;
+$color-green: #5bb12f;
+$color-white: #fff;
+$color-white-transparent: #ffffffba;
+$color-blue-transparent: #07244bc2;
+$color-gold: #e5b73b;
+
+// shadows
+$header-shadow: 0 2px 12px 0 rgba(0,0,0,0.25);
+$default-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+
+// spectre override
+$body-font-color: lighten($color-deep-black, 10%);
+
+// Responsive breakpoints
+$size-xxs: 320px;
+$size-xs: 480px;
+$size-sm: 600px;
+$size-md: 840px;
+$size-lg: 960px;
+$size-xl: 1280px;
+$size-2x: 1440px;
+
+// Container size
+$size-reader: 740px;
+$size-page: 1010px;
+
+// z indexes
+$zindex-0: 20;
+$zindex-1: 30;
+$zindex-2: 40;
+$zindex-3: 50;
+$zindex-4: 60;
+$zindex-max: 1000;
+
+// duration
+$animation-duration-default: 200ms;
+
+// Normalized font sizes
+$font-xxxxs: 0.5em;
+$font-xxxs: 0.65em;
+$font-xxs: 0.7em;
+$font-xs: 0.8em;
+$font-s: 0.9em;
+$font-m: 1em;
+$font-l: 1.1em;
+$font-xl: 1.3em;
+$font-xxl: 1.6em;
+$font-xxxl: 2em;
+$font-xxxxl: 2.5em;
+
+// Normalized font weight
+$font-weight-m: 400;
+$font-weight-l: 700;
+
+// Margins and paddings in REM
+$mp-sm: 0.2rem;
+$mp-m: 0.4rem;
+$mp-l: 0.6rem;
+$mp-xl: 1rem;
+$mp-xxl: 1.3rem;
+$mp-xxxl: 1.5rem;
+$mp-xxxxl: 2rem;
+
+// header heights
+$main-header-height: 72px;
+$secondary-header-height: 44px;
+$secondary-collapsed-header-height: 3px;
+$header-height: calc(#{$main-header-height} + #{$secondary-header-height});
+$page-menu-height: 45px;
+$page-collapsed-menu-height: 3px;
+$header-padding: calc(#{$header-height} + #{$mp-xl});
+
+//lazyImageContainer size + margin right
+$comment-shift: 25px + 8px;

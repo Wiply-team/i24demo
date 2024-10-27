@@ -1,0 +1,10 @@
+@value layout: "../../../../styles/variables/layout.module.css";
+@value gap-m from layout;
+@value colors: "../../../../styles/variables/colors.module.css";
+@value color-grey500 from colors;
+
+.empty-comment {
+  margin: 0;
+  margin-bottom: gap-m;
+  color: color-grey500;
+}

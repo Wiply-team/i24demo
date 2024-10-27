@@ -1,0 +1,29 @@
+@value colors: "../../../styles/variables/colors.module.css";
+@value color-blue400, color-red400 from colors;
+@value fonts: "../../../styles/variables/fonts.module.css";
+@value font-weight-bold, font-weight-semibold, font-weight-regular, font-size-xxs, font-size-m from fonts;
+
+.label {
+  all: revert;
+  color: color-blue400;
+  font-size: font-size-xxs;
+  line-height: font-size-xxs;
+}
+
+.label.default {
+  font-weight: font-weight-semibold;
+}
+
+.label.thin {
+  font-weight: font-weight-regular;
+}
+
+.label.bold {
+  font-size: font-size-m;
+  line-height: font-size-m;
+  font-weight: font-weight-bold;
+}
+
+.required {
+  color: color-red400;
+}

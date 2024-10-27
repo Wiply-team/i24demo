@@ -1,0 +1,22 @@
+@import '../../../sass/variables_new';
+
+.widget-layout-divider {
+  height: 1px;
+  margin: $gap-m 0;
+  background-color: $color-grey100;
+  border: none;
+
+  &.thin {
+    margin: $gap-s 0;
+  }
+
+  @media (min-width: $breaking-point-mobile-tablet) {
+    height: 0;
+    margin: 0 0 $gap-l 0;
+    background-color: none;
+
+    &.thin {
+      margin: $gap-m 0;
+    }
+  }
+}

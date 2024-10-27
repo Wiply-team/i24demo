@@ -1,0 +1,71 @@
+@value layout: "../../../../styles/variables/layout.module.css";
+@value stack-level-lower, breakpoint-xl, gap-xs, gap-s, gap-m, page-width-m, header-main-height, header-secondary-height, header-secondary-collapsed-height from layout;
+@value colors: "../../../../styles/variables/colors.module.css";
+@value color-white, shadow-normal from colors;
+
+.wrapper {
+  position: fixed;
+  top: header-main-height;
+  right: 0;
+  left: 0;
+  height: header-secondary-height;
+  background-color: color-white;
+  will-change: height, left;
+  overflow: scroll;
+  overflow-y: hidden;
+  box-shadow: shadow-normal;
+  z-index: stack-level-lower;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wrapper {
+    transition: height 200ms ease-in-out, left 500ms ease-in-out;
+  }
+}
+
+.wrapper::-webkit-scrollbar {
+  height: 0;
+  background: transparent;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  height: 0;
+}
+
+.wrapper.move {
+  left: -100px;
+}
+
+.wrapper.collapsed {
+  height: header-secondary-collapsed-height;
+}
+
+.wrapper > ul {
+  all: revert;
+  list-style: none;
+  margin: 0;
+
+  padding: calc(gap-s + gap-xs) gap-m;
+  display: flex;
+  flex-direction: row;
+  gap: gap-m;
+}
+
+.wrapper > ul > li {
+  all: revert;
+  margin: 0;
+  padding: 0;
+}
+
+@media (width >= breakpoint-xl) {
+  .wrapper {
+    display: none;
+  }
+}
+
+@media (width <= breakpoint-xl) {
+  .wrapper > ul {
+    max-width: page-width-m;
+    margin: auto;
+  }
+}

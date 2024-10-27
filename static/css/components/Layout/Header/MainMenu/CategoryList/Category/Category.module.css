@@ -1,0 +1,73 @@
+@value colors: "../../../../../../styles/variables/colors.module.css";
+@value color-red400, color-yellow400, color-blue400, color-grey500 from colors;
+@value fonts: "../../../../../../styles/variables/fonts.module.css";
+@value font-weight-bold, font-size-xs from fonts;
+@value layout: "../../../../../../styles/variables/layout.module.css";
+@value breakpoint-l, gap-xs, gap-m from layout;
+
+.dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: gap-m;
+}
+
+@media (width <= breakpoint-l) {
+  .dropdown-wrapper {
+    width: 100%;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: color-grey500;
+  fill: color-blue400;
+  text-transform: uppercase;
+  font-size: font-size-xs;
+  font-weight: font-weight-bold;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wrapper {
+    transition: color 200ms ease-in-out;
+  }
+}
+
+@media (width <= breakpoint-l) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+.wrapper:hover {
+  color: color-red400;
+}
+
+.active {
+  color: color-blue400;
+}
+
+.highlighted-category {
+  color: color-red400;
+}
+
+.active .link-wrapper::after {
+  position: relative;
+  background-color: color-red400;
+  content: "";
+  display: block;
+  height: 2px;
+  margin: gap-xs 0 0;
+  width: 30px;
+}
+
+.button {
+  display: none;
+}
+
+@media (width <= breakpoint-l) {
+  .button {
+    display: block;
+  }
+}

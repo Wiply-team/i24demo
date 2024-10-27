@@ -1,0 +1,50 @@
+@value colors: "../../../../styles/variables/colors.module.css";
+@value color-grey500, color-blue300, color-blue400, color-red400 from colors;
+@value layout: "../../../../styles/variables/layout.module.css";
+@value gap-l from layout;
+@value fonts: "../../../../styles/variables/fonts.module.css";
+@value font-weight-semibold, font-size-m, font-size-xs, font-size-xxs from fonts;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: gap-l;
+  color: color-grey500;
+}
+
+.link-wrapper {
+  font-weight: font-weight-semibold;
+  color: color-blue400;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .link-wrapper {
+    transition: color 200ms ease-in-out;
+  }
+}
+
+.link-wrapper:hover {
+  color: color-red400;
+}
+
+.success-title {
+  all: revert;
+  margin: 0;
+
+  color: color-blue400;
+  font-size: font-size-m;
+}
+
+.success {
+  all: revert;
+  margin: 0;
+
+  color: color-blue300;
+  font-size: font-size-xs;
+}
+
+.mandatory-text {
+  color: color-red400;
+  font-size: font-size-xxs;
+  margin: 0;
+}

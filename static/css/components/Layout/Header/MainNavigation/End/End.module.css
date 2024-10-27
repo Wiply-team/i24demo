@@ -1,0 +1,32 @@
+@value layout: "../../../../../styles/variables/layout.module.css";
+@value breakpoint-l, breakpoint-xl from layout;
+
+.list {
+  all: revert;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  flex: 1 1 50%;
+  justify-content: flex-start;
+}
+
+.list li {
+  all: revert;
+  margin: 0;
+  padding: 0;
+}
+
+@media (width <= breakpoint-xl) {
+  .list {
+    flex: 0 0 auto;
+  }
+}
+
+@media (width <= breakpoint-l) {
+  .list {
+    display: none;
+  }
+}

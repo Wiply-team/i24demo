@@ -1,0 +1,19 @@
+@import './../../sass/variables';
+
+.app .error-page {
+  color: black;
+  text-align: center;
+
+  h2 {
+    margin-top: 2em;
+  }
+
+  .error-code {
+    font-size: 10em;
+  }
+
+  .back-button {
+    margin: 57px auto 0;
+    font-size: $font-xs;
+  }
+}

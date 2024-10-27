@@ -1,0 +1,51 @@
+@value layout: "../../../../../styles/variables/layout.module.css";
+@value breakpoint-l, gap-xs, gap-m, gap-l from layout;
+
+.list {
+  all: revert;
+  list-style: none;
+  margin: 0;
+
+  display: flex;
+  justify-content: flex-start;
+  flex: 1 1 auto;
+  gap: gap-m;
+  padding: 0;
+}
+
+.sub-list {
+  display: none;
+}
+
+@media (width <= breakpoint-l) {
+  .list {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: calc(gap-m + gap-xs);
+  }
+
+  .sub-list {
+    display: flex;
+    margin-left: gap-m;
+  }
+
+  :global(.rtl) .sub-list {
+    margin-left: unset;
+    margin-right: gap-m;
+  }
+}
+
+.list > li {
+  all: revert;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+}
+
+@media (width <= breakpoint-l) {
+  .list > li {
+    width: 100%;
+  }
+}

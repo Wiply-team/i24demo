@@ -1,0 +1,51 @@
+@value colors: "../../../../../../styles/variables/colors.module.css";
+@value color-red400, color-grey300, color-white from colors;
+@value layout: "../../../../../../styles/variables/layout.module.css";
+@value gap-xs, gap-s, gap-m, breakpoint-xl from layout;
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  fill: color-white;
+  color: color-white;
+  border-left: 1px solid color-grey300;
+  border-right: 1px solid color-grey300;
+
+  & > a:focus-visible {
+    border: none;
+    outline: 3px dashed color-white;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wrapper {
+    transition: fill 200ms ease-in-out, color 200ms ease-in-out;
+  }
+}
+
+.wrapper:hover {
+  fill: color-red400;
+  color: color-red400;
+}
+
+.label {
+  display: flex;
+  padding: gap-xs calc(gap-m + gap-s);
+  gap: gap-s;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.label-text {
+  line-height: 1em;
+}
+
+@media (width <= breakpoint-xl) {
+  .label {
+    padding: gap-xs gap-m;
+  }
+
+  .label-text {
+    display: none;
+  }
+}

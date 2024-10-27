@@ -1,0 +1,24 @@
+@value layout: "../../../styles/variables/layout.module.css";
+@value colors: "../../../styles/variables/colors.module.css";
+@value color-blue400 from colors;
+@value gap-m, gap-xl from layout;
+
+.wrapper {
+  margin-bottom: gap-xl;
+}
+
+.wrapper h1 {
+  padding-bottom: gap-m;
+  color: color-blue400;
+  font-weight: bold;
+  text-align: left;
+}
+
+.content-excerpt {
+  text-align: left;
+}
+
+:global(.rtl) .content-excerpt,
+:global(.rtl) .wrapper h1 {
+  text-align: right;
+}

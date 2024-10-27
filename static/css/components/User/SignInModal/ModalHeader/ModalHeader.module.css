@@ -1,0 +1,13 @@
+@value colors: "../../../../styles/variables/colors.module.css";
+@value color-blue400 from colors;
+@value fonts: "../../../../styles/variables/fonts.module.css";
+@value font-size-xxxl from fonts;
+
+.header {
+  all: revert;
+  margin: 0;
+
+  font-size: font-size-xxxl;
+  color: color-blue400;
+  text-align: center;
+}

@@ -1,0 +1,9 @@
+@import '../../sass/variables';
+
+#article {
+  @media (max-width: $size-xl) {
+    .breadcrumb li:nth-last-child(-n+2) {
+      display: none;
+    }
+  }
+}

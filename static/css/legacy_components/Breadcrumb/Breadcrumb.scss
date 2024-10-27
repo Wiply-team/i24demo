@@ -1,0 +1,66 @@
+@import './../../sass/variables';
+@import './../../sass/mixins';
+
+.breadcrumb {
+  margin-bottom: $mp-xxxxl;
+
+  @media (max-width: $size-xl) {
+    margin-bottom: $mp-xl;
+  }
+
+  .container-page {
+    ul {
+      display: flex;
+      margin: 0;
+      list-style: none;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      align-items: center;
+      gap: $mp-m;
+
+      li {
+        margin: 0;
+        color: $color-deep-blue;
+        font-weight: $font-weight-l;
+        font-size: $font-xs;
+        transition: color $animation-duration-default ease-out;
+
+        &:last-child {
+          display: inline;
+          overflow-x: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &:hover a {
+          color: $color-red;
+        }
+
+        a, span {
+          white-space: nowrap;
+        }
+
+        .arrow-icon {
+          transform: rotate(180deg);
+          fill: $color-deep-blue;
+        }
+      }
+    }
+  }
+}
+
+// arabic layout specificities
+.rtl {
+  .breadcrumb {
+    ul {
+      li {
+        margin: 0 0 0 $mp-m;
+
+        .arrow-icon {
+          margin-right: 0;
+          margin-left: 5px;
+          transform: none;
+        }
+      }
+    }
+  }
+}

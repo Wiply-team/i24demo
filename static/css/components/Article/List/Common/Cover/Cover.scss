@@ -1,0 +1,41 @@
+@import '../../../../../sass/variables_new';
+
+.article-cover-wrapper {
+  position: relative;
+
+  .article-reading-time-wrapper {
+    position: absolute;
+    top: $gap-s;
+    right: $gap-s;
+    display: block;
+    opacity: 0;
+    transition: opacity $animation-duration-default ease-out;
+  }
+
+  &:hover {
+    .article-reading-time-wrapper {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: $breaking-point-mobile-tablet) {
+    .article-reading-time-wrapper {
+      display: none;
+    }
+
+    &:not(.size-large) {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 144px;
+    }
+  }
+}
+
+.rtl {
+  .article-cover-wrapper {
+    .article-reading-time-wrapper {
+      right: unset;
+      left: $gap-s;
+    }
+  }
+}

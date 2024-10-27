@@ -1,0 +1,7 @@
+@value colors: "../../../styles/variables/colors.module.css";
+@value color-grey600 from colors;
+
+.empty {
+  color: color-grey600;
+  text-align: center;
+}

@@ -1,0 +1,38 @@
+export default {
+  english: {
+    label: "User menu",
+    signIn: "Sign in",
+    signOut: "Sign out",
+    profileLabel: "My Profile",
+    profileLink: "/en/profile",
+    favoritesLabel: "My Favorites",
+    favoritesLink: "/en/favorites",
+  },
+  french: {
+    label: "Menu utilisateur",
+    signIn: "Connexion",
+    signOut: "Déconnexion",
+    profileLabel: "Mon Profil",
+    profileLink: "/fr/profile",
+    favoritesLabel: "Mes Favoris",
+    favoritesLink: "/fr/favoris",
+  },
+  arabic: {
+    label: "قائمة المستخدم",
+    signIn: "تسجيل الدخول",
+    signOut: "تسجيل الخروج",
+    profileLabel: "معلومات شخصية",
+    profileLink: "/ar/profile",
+    favoritesLabel: "المفضلة",
+    favoritesLink: "/ar/المفضلة",
+  },
+  hebrew: {
+    label: "תפריט משתמש",
+    signIn: "התחבר",
+    signOut: "התנתק",
+    profileLabel: "הפרופיל שלי",
+    profileLink: "/he/profile",
+    favoritesLabel: "המועדפים שלי",
+    favoritesLink: "/he/favorites",
+  },
+};

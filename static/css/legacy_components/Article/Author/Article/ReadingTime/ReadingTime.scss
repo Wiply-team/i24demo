@@ -1,0 +1,13 @@
+@import '../../../../../sass/variables';
+
+.article-reading-time {
+  display: flex;
+  flex-grow: 0;
+  gap: $mp-m;
+  align-items: center;
+  color: $color-deep-blue;
+
+  svg {
+    fill: $color-deep-blue;
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../sass/variables_new';
+
+.widget-reading-time {
+  display: flex;
+  gap: $gap-xxs;
+  align-items: center;
+  padding: $gap-xxs $gap-xs;
+  color: $color-white;
+  background-color: $color-grey500;
+  border-radius: $gap-xs;
+
+  svg {
+    fill: $color-white;
+  }
+}

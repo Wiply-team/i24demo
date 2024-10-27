@@ -1,0 +1,21 @@
+.link {
+  all: revert;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-underlined {
+  display: inline;
+  text-decoration: underline;
+}
+
+.block {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}

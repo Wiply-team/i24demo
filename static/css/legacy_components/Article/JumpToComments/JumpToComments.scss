@@ -1,0 +1,42 @@
+@import '../../../sass/variables';
+
+.jump-to-comments {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: $mp-xl 0 $mp-xl;
+  padding: $mp-l;
+  font-weight: bold;
+  box-shadow: $default-shadow;
+
+  .add-comment {
+    display: flex;
+    gap: $mp-l;
+    align-items: center;
+  }
+
+  @media (max-width: $size-sm) {
+    span {
+      margin-right: $mp-xl;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: $size-xs) {
+    flex-direction: column;
+
+    span {
+      margin-right: unset;
+      margin-bottom: $mp-l;
+    }
+  }
+}
+
+.rtl .jump-to-comments {
+  @media (max-width: $size-sm) {
+    span {
+      margin-right: unset;
+      margin-left: $mp-xl;
+    }
+  }
+}

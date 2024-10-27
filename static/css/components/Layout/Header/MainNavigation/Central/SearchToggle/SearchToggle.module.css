@@ -1,0 +1,22 @@
+@value colors: "../../../../../../styles/variables/colors.module.css";
+@value color-red400, color-white from colors;
+
+.wrapper {
+  fill: color-white;
+
+  & > button:focus-visible {
+    border: none;
+    outline: 3px dashed color-white;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wrapper {
+    transition: fill 200ms ease-in-out;
+  }
+}
+
+.wrapper.active,
+.wrapper:hover {
+  fill: color-red400;
+}

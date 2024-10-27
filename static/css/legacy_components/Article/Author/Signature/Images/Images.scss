@@ -1,0 +1,33 @@
+@import '../../../../../sass/variables';
+
+.signature-images-default img {
+  border-radius: 999em;
+  object-fit: cover;
+  width: 36px;
+  height: 36px;
+}
+
+.signature-images-multiple {
+  picture {
+    position: relative;
+    vertical-align: middle;
+    z-index: 2;
+    margin-left: -4px;
+
+    &:first-child {
+      margin-left: 0;
+      z-index: 3;
+    }
+
+    &:last-child {
+      z-index: 1;
+    }
+
+    img {
+      border-radius: 999em;
+      object-fit: cover;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

@@ -1,0 +1,160 @@
+@import '../../sass/variables';
+@import './Banner';
+
+#homepage {
+  .taboola-ads {
+    min-height: 325px;
+
+    @media (max-width: $size-sm) {
+      min-height: 765px;
+    }
+  }
+
+  section {
+    .aside-ads,
+    .featured-category-ads {
+      margin: 0 auto;
+    }
+
+    .featured-category-ads {
+      min-height: 620px;
+
+      @media (max-width: $size-sm) {
+        min-height: 741px;
+      }
+    }
+
+    &.top-articles {
+      padding: 0;
+      margin: 0;
+
+      @media (min-width: $size-md) {
+        .main-column {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .aside-column {
+          display: flex;
+          flex-direction: column;
+          // Fixed column height based on the approximate space used by the
+          // main column
+          height: 1550px;
+
+          [data-is="newsfeed"] {
+            display: flex;
+            flex: 1;
+            flex-flow: column;
+            overflow: hidden;
+
+            [data-is="aside-newsfeed"] {
+              display: flex;
+              flex-direction: column;
+              height: 100%;
+
+              .timeline {
+                position: relative;
+                display: flex;
+                flex: 1;
+                flex-flow: column;
+                overflow: hidden;
+
+                @media (min-width: $size-md) {
+                  &::after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100px;
+                    background-image:
+                      linear-gradient(
+                        to bottom,
+                        rgba(255,255,255, 0),
+                        rgba(255,255,255, 0.2) 50%,
+                        rgba(255,255,255, 0.3) 60%,
+                        rgba(255,255,255, 0.4) 70%,
+                        rgba(255,255,255, 0.5) 80%,
+                        rgba(255,255,255, 0.5) 90%,
+                        rgba(255,255,255, 0.6) 94%,
+                        rgba(255,255,255, 0.65) 96%,
+                        rgba(255,255,255, 0.7) 98%
+                      );
+                    content: "";
+                    pointer-events: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: $size-md) {
+        [data-is="aside-newsfeed"] {
+          .timeline > *:nth-child(n+11) {
+            display: none;
+          }
+        }
+      }
+
+      [data-is="newsfeed"] {
+        margin-bottom: $mp-xl;
+        box-shadow: $default-shadow;
+
+        @media (max-width: $size-md) {
+          box-shadow: unset;
+
+          [data-is="aside-newsfeed"] {
+            margin-top: $mp-xxxxl;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    &.latest-videos {
+      margin: 0;
+      padding: 0;
+      padding-bottom: $mp-l;
+      box-shadow: none;
+
+      .wrapper {
+        max-width: calc($size-page + 200px);
+        margin: auto;
+        padding: $mp-xl 0 $mp-xxl 0;
+        background-color: $color-deep-blue;
+
+        @media (width >= calc($size-page + 200px)) {
+          padding: $mp-xl 100px $mp-xxl 100px;
+        }
+
+        @media (max-width: $size-sm) {
+          padding: $mp-xxl 0 $mp-xxxl;
+        }
+      }
+
+      .container-page {
+        @media (width >= $size-xl) {
+          padding: 0;
+        }
+      }
+    }
+
+    &.column-ads {
+      margin: 0;
+    }
+
+    &.featured-categories {
+      margin-top: 0;
+      padding: $mp-xxl 0;
+      box-shadow: none;
+    }
+  }
+
+  @media (max-width: $size-lg) {
+    section.special {
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@value layout: "../../../styles/variables/layout.module.css";
+@value gap-xs from layout;
+@value colors: "../../../styles/variables/colors.module.css";
+@value color-blue200, color-white from colors;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  gap: gap-xs;
+  width: 100%;
+}
+
+.input,
+.input:required {
+  all: revert;
+  box-sizing: border-box;
+}
+
+.input:focus-visible {
+  border: 1px solid color-white;
+  outline-offset: 2px;
+  outline: 3px solid color-blue200;
+}

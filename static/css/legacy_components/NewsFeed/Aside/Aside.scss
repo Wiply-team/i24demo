@@ -1,0 +1,28 @@
+@import './../../../sass/variables';
+
+[data-is="aside-newsfeed"] {
+  padding: $mp-xl;
+
+  .more {
+    display: block;
+    width: 100%;
+    height: 34px;
+    margin-top: $mp-xxl;
+    color: $color-deep-blue;
+    font-weight: bold;
+    font-size: $font-s;
+    line-height: calc(#{$font-s} * 2);
+    text-align: center;
+    background-color: $color-white;
+    border: 2px $color-deep-blue solid;
+    transition:
+      color $animation-duration-default ease-out,
+      background-color $animation-duration-default ease-out,
+      border-color $animation-duration-default ease-out;
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-deep-blue;
+    }
+  }
+}

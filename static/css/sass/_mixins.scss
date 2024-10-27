@@ -1,0 +1,69 @@
+@import 'spectre.css/src/mixins';
+@import './variables';
+
+@function neg($val) {
+  @return $val * -1;
+}
+
+@mixin stick-to-header() {
+  top: $main-header-height;
+
+  @media (max-width: $size-xl) {
+    top: calc(#{$main-header-height} + #{$secondary-header-height});
+  }
+}
+
+@mixin stick-to-collapsed-header() {
+  top: $main-header-height;
+
+  @media (max-width: $size-xl) {
+    top: calc(#{$main-header-height} + #{$secondary-collapsed-header-height});
+  }
+}
+
+@mixin active-item-highlight($margin: #{$mp-m 0 0 0}) {
+  display: block;
+  width: 31px;
+  height: 2px;
+  margin: $margin;
+  background-color: $color-red;
+  content: "";
+}
+
+@mixin active-navigation-item($color: $color-deep-blue) {
+  .active {
+    color: $color;
+    text-decoration: none;
+
+    &::after {
+      @include active-item-highlight;
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+
+@mixin rotate($degrees) {
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -webkit-transform: rotate($degrees);
+  transform: rotate($degrees);
+  will-change: transform;
+}
+
+@mixin pulse() {
+  background-color: rgba(170, 170, 170, 0.2);
+  animation: blink 1500ms ease infinite;
+}

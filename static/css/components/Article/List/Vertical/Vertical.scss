@@ -1,0 +1,40 @@
+@import '../../../../sass/variables_new';
+
+.article-list-vertical {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  .article-list-vertical-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: $gap-s;
+  }
+
+  &>a:focus-visible {
+    .article-reading-time-wrapper {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: $breaking-point-mobile-tablet) {
+    &:not(.size-large) {
+      .article-list-vertical-wrapper {
+        flex-direction: row;
+      }
+    }
+
+    &.size-large {
+      .article-list-vertical-wrapper {
+        .cover-wrapper {
+          position: relative;
+          right: -1rem;
+          left: -1rem;
+          width: calc(100% + 2rem);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@value layout: "../../../../../styles/variables/layout.module.css";
+@value gap-xs, gap-s from layout;
+@value colors: "../../../../../styles/variables/colors.module.css";
+@value color-blue400, color-red400 from colors;
+@value fonts: "../../../../../styles/variables/fonts.module.css";
+@value font-weight-bold, font-size-xs from fonts;
+
+.wrapper {
+  color: color-blue400;
+  font-weight: font-weight-bold;
+  font-size: font-size-xs;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.wrapper.highlighted-category {
+  color: color-red400;
+}
+
+.wrapper hr {
+  all: revert;
+  border: none;
+  margin: 0;
+
+  margin-top: calc(gap-s + gap-xs);
+  width: 30px;
+  height: 2px;
+  background-color: color-red400;
+  visibility: hidden;
+}
+
+.wrapper.active hr {
+  visibility: visible;
+}

@@ -1,0 +1,14 @@
+@import '../../../sass/variables_new';
+
+.widget-typography-text {
+  margin: 0;
+  font-size: $font-size-s;
+
+  &.size-small {
+    font-size: $font-size-xs;
+  }
+
+  &.size-extra-small {
+    font-size: $font-size-xxs;
+  }
+}

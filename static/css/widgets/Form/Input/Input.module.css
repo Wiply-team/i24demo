@@ -1,0 +1,36 @@
+@value layout: "../../../styles/variables/layout.module.css";
+@value gap-xs, gap-s from layout;
+@value colors: "../../../styles/variables/colors.module.css";
+@value color-blue200, color-blue300, color-white from colors;
+@value fonts: "../../../styles/variables/fonts.module.css";
+@value font-size-xs, font-size-xxs, font-size-l from fonts;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: gap-xs;
+  width: 100%;
+}
+
+.input,
+.input:required {
+  all: revert;
+  box-sizing: border-box;
+
+  border: 1px solid color-blue200;
+  box-shadow: none;
+  font-style: normal;
+  font-size: font-size-xs;
+  line-height: font-size-l;
+  padding: gap-xs gap-s;
+}
+
+.input:focus-visible {
+  outline: 3px solid color-blue200;
+}
+
+.instructions {
+  all: revert;
+  color: color-blue300;
+  font-size: font-size-xxs;
+}

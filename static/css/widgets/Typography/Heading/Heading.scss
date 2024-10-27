@@ -1,0 +1,64 @@
+@import '../../../sass/variables_new';
+
+.widget-typography-heading {
+  all: revert;
+  position: relative;
+  display: flex;
+  gap: $gap-s;
+  margin-top: 0;
+  margin-bottom: 1.4em;
+  font-weight: $font-weight-regular;
+  line-height: 1.2;
+  color: $color-blue;
+
+  &.color-light {
+    color: $color-white;
+  }
+
+  &::after {
+    --border-width: 3px;
+    position: absolute;
+    bottom: calc((var(--border-width) + #{$gap-xs}) * -1);
+    width: 32px;
+    margin: 0;
+    border: 0;
+    border-top: var(--border-width) solid $color-red;
+    content: "";
+  }
+
+  .widget-typography-heading-separator {
+    align-self: flex-end;
+    font-size: 1.6em;
+    line-height: 0.65em;
+  }
+
+  .widget-typography-heading-subtitle {
+    align-self: end;
+    font-size: 0.8em;
+  }
+}
+
+h1.widget-typography-heading {
+  font-size: $font-size-xxl;
+
+  &.size-large {
+    font-size: $font-size-xxxl;
+  }
+
+  &.size-small {
+    font-size: $font-size-xl;
+  }
+}
+
+h2.widget-typography-heading {
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-xl;
+
+  &.size-large {
+    font-size: $font-size-xxl;
+  }
+
+  &.size-small {
+    font-size: $font-size-l;
+  }
+}

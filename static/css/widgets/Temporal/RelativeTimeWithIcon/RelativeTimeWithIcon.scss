@@ -1,0 +1,12 @@
+@import '../../../sass/variables_new';
+
+.widget-temporal-relative-time-with-icon {
+  display: flex;
+  gap: $gap-s;
+  align-items: center;
+  color: $color-grey600;
+
+  svg {
+    fill: $color-grey600;
+  }
+}

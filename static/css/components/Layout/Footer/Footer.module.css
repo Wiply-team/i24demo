@@ -1,0 +1,180 @@
+@value layout: "../../../styles/variables/layout.module.css";
+@value breakpoint-m, breakpoint-l, breakpoint-xl, gap-s, gap-m, gap-l, page-width-m from layout;
+@value colors: "../../../styles/variables/colors.module.css";
+@value color-white, color-blue400, color-grey300 from colors;
+@value fonts: "../../../styles/variables/fonts.module.css";
+@value font-weight-bold, font-size-m, font-size-xs from fonts;
+
+.wrapper {
+  display: flex;
+  gap: gap-l;
+  min-height: 200px;
+  margin-top: gap-l;
+  padding: gap-l gap-m 110px;
+  background: color-blue400;
+
+  a:focus-visible {
+    border: none;
+    outline: 3px dashed color-white;
+  }
+}
+
+.column {
+  flex: 1 1 33%;
+  display: flex;
+}
+
+@media (width <= breakpoint-xl) {
+  .column {
+    display: none;
+  }
+}
+
+.brand {
+  justify-content: flex-end;
+  fill: color-white;
+}
+
+.navigation {
+  flex: 0 0 auto;
+  width: page-width-m;
+  display: flex;
+  gap: gap-l;
+}
+
+@media (width <= breakpoint-xl) {
+  .navigation {
+    display: flex;
+    max-width: page-width-m;
+    flex: 1 1 auto;
+    margin: auto;
+  }
+}
+
+@media (width <= breakpoint-l) {
+  .navigation {
+    flex-direction: column;
+    gap: gap-m;
+  }
+}
+
+.navigation .links {
+  all: revert;
+
+  display: flex;
+  gap: gap-m;
+  flex: 1 1 auto;
+}
+
+@media (width <= breakpoint-l) {
+  .navigation .links {
+    flex-direction: column;
+  }
+}
+
+.navigation .links > nav {
+  all: revert;
+
+  display: flex;
+  gap: gap-m;
+  flex-direction: column;
+  flex: 1 1 25%;
+}
+
+.navigation .apps {
+  all: revert;
+
+  display: flex;
+  flex-direction: column;
+  gap: gap-m;
+  flex: 0 0 auto;
+}
+
+@media (width <= breakpoint-l) {
+  .navigation .apps {
+    flex-direction: row;
+  }
+}
+
+.list-title {
+  all: revert;
+  padding: 0;
+  margin: 0;
+
+  font-weight: font-weight-bold;
+  font-size: font-size-m;
+  color: color-white;
+
+  svg {
+    fill: color-white;
+  }
+}
+
+.apps .list-title {
+  display: none;
+}
+
+@media (width <= breakpoint-xl) {
+  .apps .list-title {
+    display: block;
+  }
+}
+
+@media (width <= breakpoint-l) {
+  .apps .list-title {
+    display: none;
+  }
+}
+
+.list {
+  all: revert;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: gap-s;
+}
+
+.list > li {
+  all: revert;
+  margin: 0;
+  padding: 0;
+
+  font-size: font-size-xs;
+  font-weight: font-weight-bold;
+  color: color-grey300;
+  text-transform: uppercase;
+}
+
+.no-upper-case > a {
+  text-transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .list > li {
+    transition: color 200ms ease-in-out;
+  }
+}
+
+.list > li:hover {
+  color: color-white;
+}
+
+@media (width <= breakpoint-l) {
+  .apps .list {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.social-network-links-wrapper {
+  padding: gap-l 0;
+}
+
+@media (width <= breakpoint-l) {
+  .social-network-links-wrapper {
+    padding: gap-m 0;
+  }
+}

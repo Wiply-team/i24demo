@@ -1,0 +1,36 @@
+@import '../../../sass/variables_new';
+
+.missing-person-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-grey100;
+  height: 100%;
+
+  &.missing-person-card-placeholder {
+    height: 200px;
+  }
+
+  .missing-person-card-information {
+    padding: $gap-s;
+
+    .missing-person-card-title {
+      font-weight: $font-weight-semibold;
+      font-size: $font-size-m;
+      color: $color-grey;
+    }
+
+    .missing-person-card-location {
+      font-weight: $font-weight-regular;
+      font-size: $font-size-xs;
+    }
+
+    p.missing-person-card-description {
+      all: revert;
+      margin: 0;
+      padding: 0;
+      font-weight: $font-weight-regular;
+      font-size: $font-size-xs;
+      color: $color-grey;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+.brightcove-lazy-player {
+  background-color: #ecedef;
+  display: block;
+  height: 0 !important;
+  margin-bottom: 16px;
+  padding-top: 56.25%;
+  position: relative;
+  width: 100% !important;
+}
+.brightcove-lazy-player .video-poster {
+  align-self: center;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.brightcove-lazy-player .poster-live {
+  align-items: center;
+  background-color: #e11e1d;
+  color: #fff;
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: 700;
+  height: 40px;
+  justify-content: center;
+  left: -5px;
+  min-width: 180px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 32px;
+}
+@media (max-width: 600px) {
+  .brightcove-lazy-player .poster-live {
+    font-size: 1.2rem;
+    height: 32px;
+    left: -5px;
+    min-width: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .brightcove-lazy-player .poster-live.large {
+    font-size: 1.8rem;
+    height: 64px;
+    min-width: 240px;
+  }
+}
+.brightcove-lazy-player .play-button-wrapper {
+  height: 80px;
+  left: calc(50% - 40px);
+  position: absolute;
+  top: calc(50% - 40px);
+  width: 80px;
+}
+.brightcove-lazy-player .video-js > .vjs-big-play-button,
+.brightcove-lazy-player video > .vjs-big-play-button {
+  display: none !important;
+}
+.brightcove-lazy-player.placeholder .video-poster {
+  background-color: #ecedef;
+}
+.rtl .brightcove-lazy-player .poster-live {
+  left: auto;
+  right: -5px;
+}
+div.lazyImageContainer img[data-is="lazy-image"] {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  z-index: 0;
+}
+div.lazyImageContainer img[data-is="lazy-image"].visible {
+  opacity: 1;
+}
+.VideoPlayButton_wrapper__E8Upk {
+  fill: #fff;
+  height: 100%;
+  max-height: 80px;
+  max-width: 80px;
+  min-height: 24px;
+  min-width: 24px;
+  width: 100%;
+}
+.VideoPlayButton_button__C\+iOv {
+  fill: #fff;
+  all: revert;
+  align-items: center;
+  background: none;
+  background-color: #000000b3;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  height: 100%;
+  justify-content: center;
+  line-height: normal;
+  max-height: 80px;
+  max-width: 80px;
+  min-height: 24px;
+  min-width: 24px;
+  padding: 0 0 0 3px;
+  width: 100%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .VideoPlayButton_button__C\+iOv {
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+}
+.VideoPlayButton_button__C\+iOv:hover {
+  background-color: #e11e1d;
+  border-color: #e11e1d;
+}
+/*# sourceMappingURL=9084.f6270fbd.chunk.css.map*/

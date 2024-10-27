@@ -1,0 +1,44 @@
+@value layout: "../../../../../styles/variables/layout.module.css";
+@value breakpoint-l, breakpoint-xl, page-width-m, gap-m from layout;
+
+.list {
+  all: revert;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  width: page-width-m;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  gap: gap-m;
+}
+
+.list > li {
+  all: revert;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  gap: gap-m;
+  flex: 0 0 auto;
+}
+
+.list > li.central {
+  flex: 1 1 auto;
+}
+
+@media (width <= breakpoint-xl) {
+  .list {
+    width: auto;
+    flex: 1 1 auto;
+  }
+}
+
+@media (width <= breakpoint-l) {
+  .list > li.live-radio-item {
+    display: none;
+  }
+}

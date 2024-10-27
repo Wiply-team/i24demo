@@ -1,0 +1,100 @@
+@value colors: "../../../styles/variables/colors.module.css";
+@value overlay-background, shadow-large, color-white, color-blue400 from colors;
+@value layout: "../../../styles/variables/layout.module.css";
+@value stack-level-high, breakpoint-s, gap-xs, gap-m, gap-l, gap-xl from layout;
+
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.open {
+  display: flex;
+}
+
+.background {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: overlay-background;
+}
+
+.body {
+  z-index: stack-level-high;
+  background-color: color-white;
+  padding: gap-xl;
+  box-shadow: shadow-large;
+  position: relative;
+  min-width: min-content;
+  max-width: 100%;
+  min-height: min-content;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+@media (width <= breakpoint-s) {
+  .body {
+    padding: gap-xl gap-l;
+    width: 100dvw;
+    height: 100dvh;
+  }
+}
+
+.body::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+  background: transparent;
+}
+
+.body::-webkit-scrollbar-thumb {
+  height: 0;
+  width: 0;
+}
+.body:focus,
+.body:focus-visible {
+  border: 2px solid color-blue400;
+  border-radius: gap-xs;
+  outline: none;
+}
+
+.logo {
+  position: absolute;
+  top: gap-m;
+  padding: gap-xs;
+  background: color-blue400;
+  fill: color-white;
+}
+
+:global(.ltr) .logo {
+  left: gap-m;
+}
+
+:global(.rtl) .logo {
+  right: gap-m;
+}
+
+.close-button {
+  position: absolute;
+  top: gap-m;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  fill: color-blue400;
+}
+
+:global(.ltr) .close-button {
+  right: gap-m;
+}
+
+:global(.rtl) .close-button {
+  left: gap-m;
+}

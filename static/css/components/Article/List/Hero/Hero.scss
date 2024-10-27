@@ -1,0 +1,92 @@
+@import '../../../../sass/variables_new';
+
+.article-list-hero {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  .article-list-hero-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .information-wrapper {
+      display: flex;
+      flex-grow: 1;
+      padding: $gap-l;
+    }
+  }
+
+  &.placeholder {
+    .article-list-hero-wrapper {
+      .information-wrapper {
+        > * {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $breaking-point-mobile-tablet) {
+    .article-list-hero-wrapper {
+      .information-wrapper {
+        border: 1px solid $color-blue200;
+        border-top: none;
+
+        // Find a better way to deal with that instead of overriding children
+        .article-information {
+          flex-grow: 1;
+          justify-content: space-evenly;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breaking-point-mobile-tablet) {
+    width: 100%;
+
+    .article-list-hero-wrapper {
+      position: relative;
+
+      .cover-wrapper {
+        position: relative;
+        right: -1rem; // To be changed for "$gap-m * -1" when we will remove Spectre
+        left: -1rem; // To be changed for "$gap-m * -1" when we will remove Spectre
+        width: calc(100% + 2rem); // To be changed for "calc(100% + #{$gap-m} * 2)" when we will remove Spectre
+      }
+
+      .information-background {
+        position: absolute;
+        inset: 50% -1rem 0; // To be changed for "$gap-m * -1" when we will remove Spectre
+        background: linear-gradient(180deg, rgba(2,11,23,0) 30%, rgba(2,11,23,1) 100%);
+      }
+
+      .information-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: -1rem; // To be changed for "$gap-m * -1" when we will remove Spectre
+        right: -1rem; // To be changed for "$gap-m * -1" when we will remove Spectre
+        width: calc(100% + 2rem); // To be changed for "calc(100% + #{$gap-m} * 2)" when we will remove Spectre
+        padding: 0 1rem $gap-s 1rem;  // To be changed for "0 $gap-m $gap-s $gap-m" when we will remove Spectre
+        color: $color-white;
+
+        // Find a better way to deal with that instead of overriding children
+        * {
+          color: $color-white !important;
+        }
+
+        svg {
+          fill: $color-white !important;
+        }
+
+        .share-buttons {
+          svg {
+            fill: $color-grey500 !important;
+          }
+        }
+      }
+    }
+  }
+}

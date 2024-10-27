@@ -1,0 +1,27 @@
+@value colors: "../../../../../../styles/variables/colors.module.css";
+@value color-red400, color-white from colors;
+
+.wrapper,
+.locale {
+  color: color-white;
+  fill: color-white;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wrapper,
+  .locale {
+    transition: color 200ms ease-in-out, fill 200ms ease-in-out;
+  }
+}
+
+.wrapper:hover,
+.wrapper:hover .locale {
+  color: color-red400;
+  fill: color-red400;
+}
+
+.wrapper button:focus-visible {
+  border: none;
+  outline: 3px dashed color-white;
+}

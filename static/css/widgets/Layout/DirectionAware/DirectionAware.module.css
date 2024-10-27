@@ -1,0 +1,55 @@
+:global(.ltr) .left {
+  transform: rotate(0deg);
+}
+
+:global(.rtl) .left {
+  transform: rotate(180deg);
+}
+
+:global(.ltr) .up-left {
+  transform: rotate(45deg);
+}
+
+:global(.rtl) .up-left {
+  transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(90deg);
+}
+
+:global(.ltr) .up-right {
+  transform: rotate(135deg);
+}
+
+:global(.rtl) .up-right {
+  transform: rotate(45deg);
+}
+
+:global(.ltr) .right {
+  transform: rotate(180deg);
+}
+
+:global(.rtl) .right {
+  transform: rotate(0deg);
+}
+
+:global(.ltr) .bottom-right {
+  transform: rotate(225 deg);
+}
+
+:global(.rtl) .bottom-right {
+  transform: rotate(315deg);
+}
+
+.bottom {
+  transform: rotate(270deg);
+}
+
+:global(.ltr) .bottom-left {
+  transform: rotate(315deg);
+}
+
+:global(.rtl) .bottom-left {
+  transform: rotate(225deg);
+}

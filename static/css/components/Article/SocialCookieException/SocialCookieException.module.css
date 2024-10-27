@@ -1,0 +1,48 @@
+@value layout: "../../../styles/variables/layout.module.css";
+@value gap-s, gap-m from layout;
+@value fonts: "../../../styles/variables/fonts.module.css";
+@value font-size-s from fonts;
+@value colors: "../../../styles/variables/colors.module.css";
+@value color-grey600, color-blue400, color-red400 from colors;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: gap-s;
+  margin-bottom: gap-m;
+  font-size: font-size-s;
+}
+
+.link {
+  all: revert;
+  margin: 0;
+  padding: 0;
+
+  color: color-blue400;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .link {
+    transition: color 200ms ease-out;
+  }
+}
+
+.link:hover {
+  color: color-red400;
+}
+
+.link-inner {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text {
+  all: revert;
+  margin: 0;
+  padding: 0;
+
+  color: color-grey600;
+  font-style: italic;
+}

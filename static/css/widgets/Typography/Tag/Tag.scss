@@ -1,0 +1,26 @@
+@import '../../../sass/variables_new';
+
+.widget-typography-tag {
+  font-size: $font-size-xxs;
+  line-height: $font-size-xxs;
+
+  @media (min-width: $breaking-point-mobile-tablet) {
+    display: inline-block;
+    padding: $gap-xxs $gap-xs;
+    height: 1rem;
+    line-height: $font-size-s;
+    border-radius: 2px;
+    color: $color-white;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    background-color: $color-red;
+
+    &.sponsored {
+      background-color: $color-grey;
+    }
+  }
+
+  @media (max-width: $breaking-point-mobile-tablet) {
+    color: $color-blue;
+  }
+}
